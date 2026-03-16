@@ -1,0 +1,64 @@
+{
+  "redirects": [
+    {
+      "source": "/form-submission-success-courtyard-on-dauphin/",
+      "destination": "/courtyard-on-dauphin/",
+      "permanent": true
+    },
+    {
+      "source": "/form-submission-success-oak-and-fountain/",
+      "destination": "/oak-and-fountain/",
+      "permanent": true
+    },
+    {
+      "source": "/form-submission-success-hallett-irby-house/",
+      "destination": "/hallet-irby-house/",
+      "permanent": true
+    },
+    {
+      "source": "/form-submission-success-contact-our-team/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/form-submission-success-yellowhammer-hospitality/",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/form-submission-success-:path*",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-for-your-interest-courtyard/",
+      "destination": "/getting-started/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-for-your-interest-hallett-irby/",
+      "destination": "/getting-started/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-for-your-interest-oak-and-fountain/",
+      "destination": "/getting-started/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-for-your-interest-:path*",
+      "destination": "/getting-started/",
+      "permanent": true
+    },
+    {
+      "source": "/minimal-portfolio-post-:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
