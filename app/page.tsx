@@ -5,16 +5,18 @@ import { venues, companyHistory, PHONE_DISPLAY, PHONE_NUMBER, EMAIL } from "@/li
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero */}
-      <section className="relative flex min-h-[60vh] items-center justify-center bg-dark-bg text-white">
-        <Image
-          src="/images/courtyard/cyd-gate-03A.png"
-          alt="Yellowhammer Hospitality venue"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black/60" />
+      {/* 1. Hero with background video */}
+      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden bg-dark-bg text-white">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/Venues-Hero-1.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center">
           <h1 className="font-heading text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
             Immerse Yourself in Genuine Southern Hospitality in Mobile, Alabama
