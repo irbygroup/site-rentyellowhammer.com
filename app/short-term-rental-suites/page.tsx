@@ -27,7 +27,7 @@ export default function ShortTermRentalPage() {
         </a>
       </section>
 
-      {/* Venue Cards */}
+      {/* Venue Address Cards */}
       <section className="mx-auto max-w-5xl px-4 py-16">
         <div className="grid gap-8 md:grid-cols-3">
           {venues.map((venue) => (
@@ -35,7 +35,7 @@ export default function ShortTermRentalPage() {
               key={venue.slug}
               className="rounded-lg bg-white p-6 text-center shadow-md"
             >
-              <h3 className="mb-2 font-heading text-xl font-bold text-dark-bg">
+              <h3 className="mb-2 font-heading text-xl font-bold text-dark-text">
                 {venue.name}
               </h3>
               <p className="text-sm text-gray-medium">
@@ -51,14 +51,14 @@ export default function ShortTermRentalPage() {
       {/* BookedDirectly Iframe */}
       <section className="bg-gray-light py-16">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="mb-8 text-center font-heading text-3xl font-bold text-dark-bg">
+          <h2 className="mb-8 text-center font-heading text-3xl font-bold text-dark-text">
             Book Your Stay
           </h2>
           <div className="overflow-hidden rounded-lg bg-white shadow-lg">
             <iframe
               src="https://irbyrents.bookeddirectly.com/g/listings"
               title="Book a rental suite"
-              className="h-[800px] w-full border-0"
+              className="h-[900px] w-full border-0"
               loading="lazy"
             />
           </div>

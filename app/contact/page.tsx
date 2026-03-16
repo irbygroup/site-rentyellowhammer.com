@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
-import { venues, PHONE_NUMBER, PHONE_DISPLAY, EMAIL } from "@/lib/venues";
+import { PHONE_NUMBER, PHONE_DISPLAY, EMAIL } from "@/lib/venues";
 
 export const metadata: Metadata = {
   title: "Contact Us | Yellowhammer Hospitality",
@@ -9,17 +10,40 @@ export const metadata: Metadata = {
     "Contact Yellowhammer Hospitality for event venue inquiries in Mobile, AL. Schedule a tour of The Courtyard on Dauphin, Oak & Fountain, or The Hallett-Irby House.",
 };
 
+const brandCards = [
+  {
+    name: "The Courtyard on Dauphin",
+    href: "/courtyard-on-dauphin/",
+    image: "/images/courtyard/courtyard-brands.jpg",
+  },
+  {
+    name: "Oak & Fountain",
+    href: "/oak-and-fountain/",
+    image: "/images/misc/oak-brands.jpg",
+  },
+  {
+    name: "The Hallett-Irby House",
+    href: "/hallet-irby-house/",
+    image: "/images/courtyard/hicourtyard-contact.jpg",
+  },
+  {
+    name: "Short Term Rentals",
+    href: "/short-term-rental-suites/",
+    image: "/images/misc/short-term-rentals-contact-pg.jpg",
+  },
+];
+
 export default function ContactPage() {
   return (
     <>
       {/* Hero */}
       <section className="bg-dark-bg py-16 text-center text-white">
-        <h1 className="mb-4 font-heading text-4xl font-bold md:text-5xl">
+        <h1 className="mb-4 font-heading text-4xl font-bold uppercase md:text-5xl">
           Contact Us
         </h1>
-        <p className="mx-auto max-w-xl text-gray-300">
-          We&apos;re Glad You&apos;re Here, We&apos;d Love To Chat.
-        </p>
+        <h3 className="mx-auto max-w-xl font-heading text-xl text-gray-300">
+          We have a place and a space that you&apos;ll love!
+        </h3>
       </section>
 
       {/* Contact Content */}
@@ -27,9 +51,6 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Left: Info */}
           <div>
-            <h2 className="mb-4 font-heading text-2xl font-bold text-dark-bg">
-              We have a place and a space that you&apos;ll love!
-            </h2>
             <p className="mb-4 leading-relaxed text-gray-dark">
               Mobile is one of the oldest cities in the country and the best
               place to experience authentic Southern hospitality during your next
@@ -46,7 +67,7 @@ export default function ContactPage() {
             </p>
 
             <div className="mb-6 rounded-lg bg-gray-light p-6">
-              <h3 className="mb-2 font-heading text-lg font-bold text-dark-bg">
+              <h3 className="mb-2 font-heading text-lg font-bold text-dark-text">
                 Our Location
               </h3>
               <p className="text-gray-dark">
@@ -75,7 +96,7 @@ export default function ContactPage() {
 
           {/* Right: Form */}
           <div className="rounded-lg bg-gray-light p-8">
-            <h3 className="mb-6 font-heading text-xl font-bold text-dark-bg">
+            <h3 className="mb-6 font-heading text-xl font-bold text-dark-text">
               Send Us a Message
             </h3>
             <ContactForm />
@@ -83,41 +104,36 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Venue Cards */}
+      {/* Our Brands */}
       <section className="bg-gray-light py-16">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="mb-8 text-center font-heading text-2xl font-bold text-dark-bg">
+          <h2 className="mb-8 text-center font-heading text-2xl font-bold text-dark-text">
             Our Brands
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {venues.map((venue) => (
+            {brandCards.map((card) => (
               <Link
-                key={venue.slug}
-                href={`/${venue.slug}/`}
-                className="rounded-lg bg-white p-5 text-center shadow-md transition-transform hover:-translate-y-1"
+                key={card.href}
+                href={card.href}
+                className="group relative block overflow-hidden rounded-lg shadow-md transition-transform hover:-translate-y-1"
               >
-                <h3 className="mb-1 font-heading text-lg font-bold text-dark-bg">
-                  {venue.name}
-                </h3>
-                <p className="text-sm text-gray-medium">
-                  {venue.address}
-                  <br />
-                  {venue.city}
-                </p>
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={card.image}
+                    alt={card.name}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <h3 className="text-center font-heading text-lg font-bold text-white">
+                      {card.name}
+                    </h3>
+                  </div>
+                </div>
               </Link>
             ))}
-            <div className="rounded-lg bg-white p-5 text-center shadow-md">
-              <h3 className="mb-1 font-heading text-lg font-bold text-dark-bg">
-                Short Term Rental Suites
-              </h3>
-              <p className="text-sm text-gray-medium">
-                Suites located throughout Mobile County, AL.{" "}
-                <Link href="/contact/" className="text-gold hover:text-gold-dark">
-                  Contact Us
-                </Link>{" "}
-                for more information.
-              </p>
-            </div>
           </div>
         </div>
       </section>

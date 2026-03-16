@@ -16,7 +16,7 @@ export function VenueAccordion({ tabs }: { tabs: Tab[] }) {
         <div key={tab.title} className="overflow-hidden rounded-lg border border-gray-200">
           <button
             onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-            className="flex w-full items-center justify-between bg-white px-6 py-4 text-left font-heading font-bold text-dark-bg transition-colors hover:bg-gray-50"
+            className="flex w-full items-center justify-between bg-white px-6 py-4 text-left font-heading font-bold text-dark-text transition-colors hover:bg-gray-50"
           >
             {tab.title}
             <svg

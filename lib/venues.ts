@@ -25,6 +25,7 @@ export interface Venue {
   tabs: { title: string; content: string }[];
   galleryImages: { src: string; alt: string; width: number; height: number }[];
   floorPlanSrc?: string;
+  floorPlanImages?: string[];
 }
 
 export const PHONE_NUMBER = "251-333-7368";
@@ -42,7 +43,7 @@ export const venues: Venue[] = [
     phone: PHONE_NUMBER,
     email: EMAIL,
     virtualTourUrl:
-      "https://www.zillow.com/view-3d-home/0982a8e5-6c25-4d38-97a0-0cb89aa23a88",
+      "https://re.deepsouthfocus.com/h/67324E537F2B43669E8DA00FFBE7D664",
     googleCalendarUrl: "",
     tagline: "An experience tailored for you.",
     shortDescription:
@@ -51,9 +52,9 @@ export const venues: Venue[] = [
       "Picture a stress-free event planning experience where you don't have to worry about the nitty-gritty details like scheduling, parking, or service. By hiring an event venue like The Courtyard on Dauphin, you can leave the logistics to the professionals and focus on enjoying your event.",
       "A top-notch venue will collaborate with you to understand your vision for the event and ensure that everything runs smoothly. Additionally, we work with a number of local bakeries, caterers and florists that we highly recommend for various price points, allowing you to fully immerse yourself in the festivities without any added stress.",
     ],
-    logoSrc: "/images/logos/Courtyard-on-Dauphin_logo-01.png",
-    heroImageSrc: "/images/courtyard/courtyard-hero.jpg",
-    collageImageSrc: "/images/courtyard/courtyard-collage.jpg",
+    logoSrc: "/images/logos/Courtyard-on-Dauphin_logo-01.jpg",
+    heroImageSrc: "/images/courtyard/cyd-gate-03A.png",
+    collageImageSrc: "/images/misc/explore-options-collage-01-min.png",
     testimonials: [
       {
         name: "Recent Client",
@@ -112,7 +113,7 @@ export const venues: Venue[] = [
     phone: PHONE_NUMBER,
     email: EMAIL,
     virtualTourUrl:
-      "https://www.zillow.com/view-3d-home/b3a0c6a5-2f3e-4e8a-9b1d-5c7d8e9f0a1b",
+      "https://re.deepsouthfocus.com/h/7BA8775574E7452EBAA973D073AD7EB6",
     googleCalendarUrl: "",
     tagline: "Let Us Help You Book an Unforgettable Experience!",
     shortDescription:
@@ -121,9 +122,9 @@ export const venues: Venue[] = [
       "A peaceful and serene countryside location can offer a sense of tranquility and relaxation that is hard to find in more urban areas. This type of setting can be particularly appealing for those looking to escape the hustle and bustle of city life and enjoy some time in nature. That's just a small part of what makes Oak & Fountain your perfect destination space.",
       "In addition to the rustic and elegant surroundings, this countryside venue can also offer a range of amenities and activities that are perfect for large or small gatherings. From outdoor grilling and patio spaces to biking trails and scenic views, there are plenty of ways to keep your guests entertained and engaged throughout your stay. Our comfortable and modern rooms are fully equipped with all the amenities needed to help you relax and enjoy your event.",
     ],
-    logoSrc: "/images/logos/Oak-Fountain_logo-01.png",
-    heroImageSrc: "/images/oak-fountain/oak-fountain-hero.jpg",
-    collageImageSrc: "/images/oak-fountain/oak-fountain-collage.jpg",
+    logoSrc: "/images/logos/Oak-Fountain_logo-01.jpg",
+    heroImageSrc: "/images/oak-fountain/DSC05924-1-e1707524447102.png",
+    collageImageSrc: "/images/misc/collage-of-01.jpg",
     testimonials: [
       {
         name: "Wedding Guest",
@@ -182,7 +183,7 @@ export const venues: Venue[] = [
     phone: PHONE_NUMBER,
     email: EMAIL,
     virtualTourUrl:
-      "https://www.zillow.com/view-3d-home/c4b1d7b6-3g4f-5f9b-ac2e-6d8e9f0b1c2d",
+      "https://re.deepsouthfocus.com/h/442F96DA3EA743ABBC5219332008CD34",
     googleCalendarUrl: "",
     tagline: "Let Us Help You Book an Unforgettable Experience!",
     shortDescription:
@@ -191,9 +192,9 @@ export const venues: Venue[] = [
       "Hosting a wedding, reception or small group gathering at The Hallett-Irby House in Mobile, AL can be a great way to get together with friends and family without having to travel too far. With Mobile's vibrant cultural scene and excellent restaurants, there's plenty of fun to be had while catching up with loved ones.",
       "The Hallett-Irby House is a historic property located on Government Street in Mobile, Alabama. It sits on the parade route and features a fenced yard and courtyard, a balcony, and one of the few remaining carriage houses in the area. With plenty of room to accommodate an intimate gathering of friends or family in a venue that feels like home, The Hallett-Irby House has something to offer for everyone.",
     ],
-    logoSrc: "/images/logos/Hallet-Irby_logo-01.png",
-    heroImageSrc: "/images/hallett-irby/hallett-irby-hero.jpg",
-    collageImageSrc: "/images/hallett-irby/hallett-irby-collage.jpg",
+    logoSrc: "/images/logos/Hallet-Irby_logo-01-min.png",
+    heroImageSrc: "/images/hallett-irby/HI-Exterior-Front.png",
+    collageImageSrc: "/images/courtyard/collage-courtyardHALLETT-01.jpg",
     testimonials: [
       {
         name: "Wedding Client",
@@ -241,7 +242,11 @@ export const venues: Venue[] = [
       },
     ],
     galleryImages: hallettIrbyGalleryImages,
-    floorPlanSrc: undefined,
+    floorPlanSrc: "/images/hallett-irby/41-Hallett-Irby-Main-House-Floor-Plans-All-Floors.jpg",
+    floorPlanImages: [
+      "/images/hallett-irby/41-Hallett-Irby-Main-House-Floor-Plans-All-Floors.jpg",
+      "/images/hallett-irby/44-Hallett-Irby-Carriage-House-Floor-Plans-All-Floors.jpg",
+    ],
   },
 ];
 
@@ -273,14 +278,14 @@ export const teamMembers: TeamMember[] = [
     title: "Event Manager",
     description:
       "Kristen oversees the seamless execution of events across all our venues, bringing years of hospitality experience and a passion for creating memorable experiences.",
-    imageSrc: "/images/team/event-manager.jpg",
+    imageSrc: "/images/team/team-member-2.jpg",
   },
   {
     name: "Jared Irby",
     title: "Owner, CEO",
     description:
       "Jared founded Yellowhammer Hospitality with a vision to create distinctive event spaces that showcase the best of Southern hospitality in Mobile, Alabama.",
-    imageSrc: "/images/team/owner-ceo.jpg",
+    imageSrc: "/images/team/team-member-3-2.jpg",
   },
 ];
 

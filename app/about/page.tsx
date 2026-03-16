@@ -22,21 +22,10 @@ export default function AboutPage() {
         </p>
       </section>
 
-      {/* About */}
-      <section className="mx-auto max-w-3xl px-4 py-16 text-center">
-        <p className="mb-8 leading-relaxed text-gray-dark">{companyAbout}</p>
-        <Link
-          href="/getting-started/"
-          className="inline-block rounded-full bg-gold px-8 py-3 font-bold text-dark-bg transition-colors hover:bg-gold-dark"
-        >
-          Book a Virtual Tour!
-        </Link>
-      </section>
-
       {/* Team */}
-      <section className="bg-gray-light py-16">
+      <section className="py-16">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-dark-bg">
+          <h2 className="mb-10 text-center font-heading text-3xl font-bold text-dark-text">
             Team
           </h2>
           <div className="grid gap-8 md:grid-cols-3">
@@ -55,7 +44,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-heading text-xl font-bold text-dark-bg">
+                  <h3 className="font-heading text-xl font-bold text-dark-text">
                     {member.name}
                   </h3>
                   <p className="mb-2 text-sm font-medium uppercase tracking-wide text-gold">
@@ -69,10 +58,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Venue Overview + CTA */}
+      {/* About */}
+      <section className="bg-gray-light py-16">
+        <div className="mx-auto max-w-3xl px-4 text-center">
+          <p className="mb-8 leading-relaxed text-gray-dark">{companyAbout}</p>
+          <Link
+            href="/contact/"
+            className="inline-block rounded-full bg-gold px-8 py-3 font-bold text-dark-bg transition-colors hover:bg-gold-dark"
+          >
+            Book a Virtual Tour!
+          </Link>
+        </div>
+      </section>
+
+      {/* Venue Cards */}
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4">
-          <h2 className="mb-8 text-center font-heading text-2xl font-bold text-dark-bg">
+          <h2 className="mb-8 text-center font-heading text-2xl font-bold text-dark-text">
             Let&apos;s Start Talking About Your Event
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
@@ -80,16 +82,26 @@ export default function AboutPage() {
               <Link
                 key={venue.slug}
                 href={`/${venue.slug}/`}
-                className="rounded-lg bg-gray-light p-5 text-center transition-transform hover:-translate-y-1"
+                className="group relative block overflow-hidden rounded-lg shadow-md transition-transform hover:-translate-y-1"
               >
-                <h3 className="mb-1 font-heading text-lg font-bold text-dark-bg">
-                  {venue.name}
-                </h3>
-                <p className="text-sm text-gray-medium">
-                  {venue.address}
-                  <br />
-                  {venue.city}
-                </p>
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={venue.heroImageSrc}
+                    alt={venue.name}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/40" />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                    <h3 className="mb-1 font-heading text-lg font-bold">
+                      {venue.name}
+                    </h3>
+                    <p className="text-sm">
+                      {venue.address}, {venue.city}
+                    </p>
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
